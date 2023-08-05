@@ -29,7 +29,6 @@ service 'iis' do
 end
 
 node['iis_applications'].each do |app|
-  # = "#{app['host_name']}"
 
   iis_pool "#{app['app_pool_name']}" do
     periodic_restart_schedule "#{app['restart_time']}"
@@ -41,12 +40,7 @@ node['iis_applications'].each do |app|
     port "#{app['site_port']}"
     application_pool "#{app['site_application_pool']}"
   end
-
-  # directory "#{app['site_directory']}" do
-  #   rights :read, 'IIS_IUSRS'
-  #   inherits true
-  # end
-
+  
   remote_directory "#{app['site_path']}" do
     source "#{app['site_name']}"
     action :create
@@ -54,6 +48,5 @@ node['iis_applications'].each do |app|
     overwrite true
     recursive true
   end
-
-
+  
 end
