@@ -44,8 +44,8 @@ node['iis_applications'].each do |app|
   remote_directory "#{app['site_path']}" do
     source "#{app['site_name']}"
     action :create
-    rights :full_control, 'Everyone'
-    overwrite true
+    rights :read, 'IIS_IUSRS'
+    overwrite false
     recursive true
   end
   
