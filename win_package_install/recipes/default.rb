@@ -14,7 +14,7 @@ remote_directory "C:\\temp\\treesize" do
   recursive true
 end
 
-# Downloading file from file share. For iis ensure that directory browsing is enabled. 
+# Downloading file from file share. In this case using iis with directory browsing enabled for simple repo of downloadable files.
 remote_file "C:\\temp\\treesize\\TreeSizeFree.exe" do
     source "http://192.168.0.31/shared/TreeSizeFreeSetup.exe"
 end
