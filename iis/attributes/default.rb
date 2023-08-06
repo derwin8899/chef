@@ -31,7 +31,6 @@ default['iis']['recycle']['log_events'] = 'Time, Requests, Schedule, Memory, Isa
 default['iis_applications'] = [
     {
         'app_pool_name' => 'site.a.81',
-        'host_name' => 'A',
         'restart_time' => '03:00:00',
         'site_name' => 'SITE-A-81',
         'site_path'=> 'C:\\inetpub\\wwwroot\\site_a_81',
@@ -41,7 +40,6 @@ default['iis_applications'] = [
     },
     {
         'app_pool_name' => 'site.b.82',
-        'host_name' => 'B',
         'restart_time' => '03:01:00',
         'site_name' => 'SITE-B-82',
         'site_path'=> 'C:\\inetpub\\wwwroot\\site_b_82',
@@ -51,7 +49,6 @@ default['iis_applications'] = [
     },
     {
         'app_pool_name' => 'site.c.83',
-        'host_name' => 'C',
         'restart_time' => '03:02:00',
         'site_name' => 'SITE-C-83',
         'site_path'=> 'C:\\inetpub\\wwwroot\\site_c_83',
