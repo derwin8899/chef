@@ -12,7 +12,7 @@ end
 # Loop through each application block in attributes dir to create/enforce resrouces.
 node['iis_applications'].each do |app|
 
-  # Create app pool.
+  # Create app pool and set restart time.
   iis_pool "#{app['app_pool_name']}" do
     periodic_restart_schedule "#{app['restart_time']}"
     action [:add, :start, :config]
